@@ -18,4 +18,10 @@ export enum Permission {
   ReadDoctor = 302,
   UpdateDoctor = 303,
   DeleteDoctor = 304,
+
+  ManageSchedule = 400,
+  CreateSchedule = 401,
+  ReadSchedule = 402,
+  UpdateSchedule = 403,
+  DeleteSchedule = 404,
 }

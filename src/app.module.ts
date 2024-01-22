@@ -12,6 +12,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { WrapInterceptor } from './common/interceptors/wrap.interceptor';
 import appConfig from './common/configs/app.config';
 import { DoctorModule } from './doctor/doctor.module';
+import { ScheduleModule } from './schedule/schedule.module';
 
 @Module({
   imports: [
@@ -36,6 +37,7 @@ import { DoctorModule } from './doctor/doctor.module';
     UserModule,
     RoleModule,
     DoctorModule,
+    ScheduleModule,
     AuthModule,
   ],
   controllers: [AppController],
