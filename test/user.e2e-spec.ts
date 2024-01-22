@@ -45,7 +45,7 @@ describe('User', () => {
       .post('/auth/login')
       .send({ email: 'admin@mail.com', password: 'not-set' });
 
-    accessToken = response.body.data.accessToken;
+    accessToken = response.body.body.accessToken;
   });
 
   it(`/GET user`, () => {
@@ -55,7 +55,9 @@ describe('User', () => {
       .expect(HttpStatus.OK)
       .expect({
         statusCode: HttpStatus.OK,
-        data: userService.findAll(),
+        message: 'Success',
+
+        body: userService.findAll(),
       });
   });
 
@@ -66,7 +68,8 @@ describe('User', () => {
       .expect(HttpStatus.OK)
       .expect({
         statusCode: HttpStatus.OK,
-        data: userService.findOne(),
+        message: 'Success',
+        body: userService.findOne(),
       });
   });
 
@@ -78,7 +81,8 @@ describe('User', () => {
       .expect(HttpStatus.CREATED)
       .expect({
         statusCode: HttpStatus.CREATED,
-        data: userService.create(),
+        message: 'Success',
+        body: userService.create(),
       });
   });
 
@@ -90,7 +94,9 @@ describe('User', () => {
       .expect(HttpStatus.OK)
       .expect({
         statusCode: HttpStatus.OK,
-        data: userService.update(),
+        message: 'Success',
+
+        body: userService.update(),
       });
   });
 
@@ -102,7 +108,9 @@ describe('User', () => {
       .expect(HttpStatus.OK)
       .expect({
         statusCode: HttpStatus.OK,
-        data: userService.remove(),
+        message: 'Success',
+
+        body: userService.remove(),
       });
   });
 

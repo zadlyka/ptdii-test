@@ -18,7 +18,8 @@ describe('AppController (e2e)', () => {
   it('/ (GET)', () => {
     return request(app.getHttpServer()).get('/').expect(200).expect({
       statusCode: HttpStatus.OK,
-      data: 'Hello World!',
+      message: 'Success',
+      body: 'Hello World!',
     });
   });
 });
