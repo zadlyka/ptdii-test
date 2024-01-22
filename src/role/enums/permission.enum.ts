@@ -12,4 +12,10 @@ export enum Permission {
   ReadUser = 202,
   UpdateUser = 203,
   DeleteUser = 204,
+
+  ManageDoctor = 300,
+  CreateDoctor = 301,
+  ReadDoctor = 302,
+  UpdateDoctor = 303,
+  DeleteDoctor = 304,
 }
