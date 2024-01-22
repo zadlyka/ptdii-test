@@ -1,13 +1,13 @@
 import {
   IsBoolean,
+  IsDate,
   IsEnum,
   IsMilitaryTime,
   IsNotEmpty,
   IsNumber,
-  Validate,
 } from 'class-validator';
+import { Type } from 'class-transformer';
 import { Day } from '../enums/day.enum';
-import { DateRangeValidator } from '../../common/validators/date-range.validator';
 
 export class CreateScheduleDto {
   @IsEnum(Day)
@@ -22,9 +22,15 @@ export class CreateScheduleDto {
   @IsNotEmpty()
   readonly time_finish: string;
 
+  @IsDate()
+  @Type(() => Date)
   @IsNotEmpty()
-  @Validate(DateRangeValidator)
-  readonly date_range: string;
+  readonly date_start: Date;
+
+  @IsDate()
+  @Type(() => Date)
+  @IsNotEmpty()
+  readonly date_finish: Date;
 
   @IsNumber()
   @IsNotEmpty()

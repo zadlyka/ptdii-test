@@ -22,8 +22,8 @@ export class Schedule {
   @Column({ type: 'time' })
   time_finish: Date;
 
-  @Column({ type: 'daterange' })
-  date_range: Date;
+  @Column({ type: 'date' })
+  date: Date;
 
   @Column({ type: 'smallint' })
   quota: number;
