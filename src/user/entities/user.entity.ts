@@ -25,7 +25,12 @@ export class User {
   @Column({ type: 'int' })
   role_id: number;
 
-  @ManyToOne(() => Role, { eager: true })
+  @ManyToOne(() => Role, {
+    eager: true,
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+    orphanedRowAction: 'delete',
+  })
   @JoinColumn({ name: 'role_id' })
   role: Role;
 }

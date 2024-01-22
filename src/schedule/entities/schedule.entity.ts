@@ -34,7 +34,12 @@ export class Schedule {
   @Column({ type: 'int' })
   doctor_id: number;
 
-  @ManyToOne(() => Doctor, { eager: true })
+  @ManyToOne(() => Doctor, {
+    eager: true,
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+    orphanedRowAction: 'delete',
+  })
   @JoinColumn({ name: 'doctor_id' })
   doctor: Doctor;
 }
